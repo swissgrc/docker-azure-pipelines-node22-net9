@@ -61,7 +61,7 @@ RUN apt-get update -y && \
 # renovate: datasource=github-tags depName=yarnpkg/yarn extractVersion=^v(?<version>.*)$
 ENV YARN_VERSION=1.22.22
 
-RUN npm install -g yarn@${YARN_VERSION} --ignore-scripts && \
+RUN npm install -g --ignore-scripts yarn@${YARN_VERSION} && \
   npm cache clean --force && \
   # Smoke test
   yarn --version
