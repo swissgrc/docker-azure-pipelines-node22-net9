@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>swissgrc/renovate-presets:docker"
+  ],
+  "packageRules": [
+    {
+      "matchDepNames": [ "ghcr.io/swissgrc/azure-pipelines-dotnet" ],
+      "description": "No .NET SDK Major Updates",      
+      "extends": [ ":disableMajorUpdates" ]
+    },
+    {
+      "matchDepNames": [ "nodejs/node" ],
+      "description": "No Node Major Updates",      
+      "extends": [ ":disableMajorUpdates" ]
+    }
+  ]
+}
