@@ -50,6 +50,6 @@ The following example shows the container used for a deployment step with a Azur
 | latest-22-net9   | Indentical to `latest` tag                           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/latest-22-net9?style=flat-square)   |
 | unstable         | Latest unstable release (from `develop` branch)      | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/unstable?style=flat-square)         |
 | unstable-22-net9 | Indentical to `unstable` tag                         | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/unstable-22-net9?style=flat-square) |
-| x.y.z-net9       | Image for a specific version of Node.js         	    |                                                                                                                                       |
+| x.y.z-net9       | Image for a specific version of Node.js              |                                                                                                                                       |
 
 [Azure Pipelines container jobs]: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases
