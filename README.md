@@ -10,14 +10,6 @@
 
 This image can be used to run Node.js commands in [Azure Pipelines container jobs].
 
-The following software is additionally available in the image:
-
-| Software   | Included since |
-|------------|----------------|
-| Docker CLI | 22.11.0        |
-| Git        | 22.11.0        |
-| .NET 9     | 22.11.0        |
-
 ### Azure Pipelines Container Job
 
 To use the image in an Azure Pipelines Container Job, add one of the following example tasks and use it with the `container` property.
@@ -38,17 +30,19 @@ The following example shows the container used for a deployment step with a Azur
                     node --version
 ```
 
-### Tags
+## Included Software
+- [swissgrc/azure-pipelines-dotnet:9](https://github.com/swissgrc/docker-azure-pipelines-dotnet-9) as base image
+- Node.js 22
+- Yarn
 
-| Tag              | Description                                                                                         | Base Image                              | Node.js | Yarn    | Size                                                                                                                                  |
-|------------------|-----------------------------------------------------------------------------------------------------|-----------------------------------------|---------|---------|---------------------------------------------------------------------------------------------------------------------------------------|
-| latest           | Latest stable release (from `main` branch)                                                          | swissgrc/azure-pipelines-dotnet:9.0.102 | 22.13.1 | 1.22.22 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/latest?style=flat-square)           |
-| latest-22-net9   | Indentical to `latest` tag                                                                          |                                         |         |         | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/latest-22-net9?style=flat-square)   |
-| unstable         | Latest unstable release (from `develop` branch)                                                     | swissgrc/azure-pipelines-dotnet:9.0.102 | 22.13.1 | 1.22.22 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/unstable?style=flat-square)         |
-| unstable-22-net9 | Indentical to `unstable` tag                                                                        |                                         |         |         | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/unstable-22-net9?style=flat-square) |
-| 22.11.0-net9     | [Node.js 22.11.0](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V22.md#22.11.0) | swissgrc/azure-pipelines-dotnet:9.0.100 | 22.11.0 | 1.22.22 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/22.11.0-net9?style=flat-square)     |
-| 22.12.0-net9     | [Node.js 22.12.0](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V22.md#22.12.0) | swissgrc/azure-pipelines-dotnet:9.0.100 | 22.12.0 | 1.22.22 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/22.12.0-net9?style=flat-square)     |
-| 22.13.0-net9     | [Node.js 22.13.0](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V22.md#22.13.0) | swissgrc/azure-pipelines-dotnet:9.0.100 | 22.13.0 | 1.22.22 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/22.13.0-net9?style=flat-square)     |
-| 22.13.1-net9     | [Node.js 22.13.1](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V22.md#22.13.1) | swissgrc/azure-pipelines-dotnet:9.0.102 | 22.13.1 | 1.22.22 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/22.13.1-net9?style=flat-square)     |
+## Tags
+
+| Tag              | Description                                          | Size                                                                                                                                  |
+|------------------|------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| latest           | Latest stable release (from `main` branch)           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/latest?style=flat-square)           |
+| latest-22-net9   | Indentical to `latest` tag                           | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/latest-22-net9?style=flat-square)   |
+| unstable         | Latest unstable release (from `develop` branch)      | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/unstable?style=flat-square)         |
+| unstable-22-net9 | Indentical to `unstable` tag                         | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/swissgrc/azure-pipelines-node/unstable-22-net9?style=flat-square) |
+| x.y.z-net9       | Image for a specific version of Node.js              |                                                                                                                                       |
 
 [Azure Pipelines container jobs]: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases
