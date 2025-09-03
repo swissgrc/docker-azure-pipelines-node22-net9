@@ -65,3 +65,13 @@ RUN npm install -g --ignore-scripts yarn@${YARN_VERSION} && \
   npm cache clean --force && \
   # Smoke test
   yarn --version
+  
+# Install pnpm
+
+# renovate: datasource=github-tags depName=pnpm/pnpm extractVersion=^v(?<version>.*)$
+ENV PNPM_VERSION=10.15.0
+
+RUN npm install -g --ignore-scripts pnpm@${PNPM_VERSION} && \
+  npm cache clean --force && \
+  # Smoke test
+  pnpm --version
