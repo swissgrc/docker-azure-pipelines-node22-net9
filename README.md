@@ -31,9 +31,11 @@ The following example shows the container used for a deployment step with a Azur
 ```
 
 ## Included Software
+
 - [swissgrc/azure-pipelines-dotnet:9](https://github.com/swissgrc/docker-azure-pipelines-dotnet-9) as base image
 - Node.js 22
 - Yarn
+- pnpm
 
 ## Tags
 

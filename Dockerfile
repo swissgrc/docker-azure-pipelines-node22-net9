@@ -45,7 +45,7 @@ COPY --from=build /etc/apt/sources.list.d/ /etc/apt/sources.list.d
 # Install NodeJS
 
 # renovate: datasource=github-tags depName=nodejs/node extractVersion=^v(?<version>.*)$
-ENV NODE_VERSION=22.18.0
+ENV NODE_VERSION=22.19.0
 
 RUN apt-get update -y && \
   # Install NodeJs
@@ -65,3 +65,13 @@ RUN npm install -g --ignore-scripts yarn@${YARN_VERSION} && \
   npm cache clean --force && \
   # Smoke test
   yarn --version
+  
+# Install pnpm
+
+# renovate: datasource=github-tags depName=pnpm/pnpm extractVersion=^v(?<version>.*)$
+ENV PNPM_VERSION=10.15.0
+
+RUN npm install -g --ignore-scripts pnpm@${PNPM_VERSION} && \
+  npm cache clean --force && \
+  # Smoke test
+  pnpm --version
