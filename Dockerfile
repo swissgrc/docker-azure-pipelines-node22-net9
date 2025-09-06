@@ -11,7 +11,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # renovate: datasource=repology depName=debian_12/curl versioning=deb
 ENV CURL_VERSION=7.88.1-10+deb12u12
 # renovate: datasource=repology depName=debian_12/gnupg2 versioning=deb
-ENV GNUPG_VERSION=2.2.40-1.1
+ENV GNUPG_VERSION=2.2.40-1.1+deb12u1
 
 RUN apt-get update -y && \
   # Install necessary dependencies
