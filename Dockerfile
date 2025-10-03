@@ -1,5 +1,5 @@
 # Base image containing dependencies used in builder and final image
-FROM ghcr.io/swissgrc/azure-pipelines-dotnet:9.0.304 AS base
+FROM ghcr.io/swissgrc/azure-pipelines-dotnet:9.0.305 AS base
 
 
 # Builder image
@@ -9,9 +9,9 @@ FROM base AS build
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # renovate: datasource=repology depName=debian_12/curl versioning=deb
-ENV CURL_VERSION=7.88.1-10+deb12u12
+ENV CURL_VERSION=7.88.1-10+deb12u14
 # renovate: datasource=repology depName=debian_12/gnupg2 versioning=deb
-ENV GNUPG_VERSION=2.2.40-1.1
+ENV GNUPG_VERSION=2.2.40-1.1+deb12u1
 
 RUN apt-get update -y && \
   # Install necessary dependencies
@@ -45,7 +45,7 @@ COPY --from=build /etc/apt/sources.list.d/ /etc/apt/sources.list.d
 # Install NodeJS
 
 # renovate: datasource=github-tags depName=nodejs/node extractVersion=^v(?<version>.*)$
-ENV NODE_VERSION=22.19.0
+ENV NODE_VERSION=22.20.0
 
 RUN apt-get update -y && \
   # Install NodeJs
@@ -69,7 +69,7 @@ RUN npm install -g --ignore-scripts yarn@${YARN_VERSION} && \
 # Install pnpm
 
 # renovate: datasource=github-tags depName=pnpm/pnpm extractVersion=^v(?<version>.*)$
-ENV PNPM_VERSION=10.15.0
+ENV PNPM_VERSION=10.18.0
 
 RUN npm install -g --ignore-scripts pnpm@${PNPM_VERSION} && \
   npm cache clean --force && \
