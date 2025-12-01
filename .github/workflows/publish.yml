@@ -14,9 +14,9 @@ jobs:
     uses: swissgrc/.github/.github/workflows/publish-image.yml@main
     with:
       image-name: swissgrc/azure-pipelines-node
-      default-latest-tag: true
+      default-latest-tag: false
       additional-latest-tag-name: latest-22-net9
-      default-unstable-tag: true
+      default-unstable-tag: false
       additional-unstable-tag-name: unstable-22-net9
       release-tag-suffix: net9
     secrets:
