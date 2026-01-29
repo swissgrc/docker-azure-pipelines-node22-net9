@@ -69,7 +69,7 @@ RUN npm install -g --ignore-scripts yarn@${YARN_VERSION} && \
 # Install pnpm
 
 # renovate: datasource=github-tags depName=pnpm/pnpm extractVersion=^v(?<version>.*)$
-ENV PNPM_VERSION=10.28.1
+ENV PNPM_VERSION=10.28.2
 
 RUN npm install -g --ignore-scripts pnpm@${PNPM_VERSION} && \
   npm cache clean --force && \
